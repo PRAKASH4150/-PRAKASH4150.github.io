@@ -1,15 +1,17 @@
 :root{
     --black:black;
     --white:white;
-    --lightpink:#E1D5E7;
+    --blueish:#03045e;
+    --lightpink:#B3BFB8;
+    --resume_button_bg_color: #D36135;
     --logo_font_size:25px;
     --nav_font_size:20px;
-    --section_heading_font_size:25px;
+    --section_heading_font_size:35px;
     --sections_padding:5px;
-    --resume_button_bg_color:#CC0066;
     --font_family:"Alegreya Sans",serif;
     --section_padding:70px;
-    --section_padding_mobileversion:20px;
+    --section_main_content_size:28px;
+    --content_font_size:20px;
 }
 body{
     margin:0%;
@@ -18,7 +20,7 @@ body{
     
 #navigation
 { 
-    background-color: var(--black);
+    background-color: var(--blueish);
     margin:0%;
     overflow:hidden;
     
@@ -51,8 +53,10 @@ body{
 .sectionheading
 {
     text-align:center;
-    font-weight: bold;
+    font-weight:lighter;
     font-size:var(--section_heading_font_size);
+    margin-top:10px;
+    margin-bottom:20px;
 }
 
 .box
@@ -61,13 +65,11 @@ body{
     width: 50%;
 }
 
-.box .imagebuttonholder, #skills .skillcontainer
+.box .imagebuttonholder
 {
 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-
+    display: block;
+    text-align: center;
 }
 
 #aboutme
@@ -89,7 +91,7 @@ body{
     color: var(--white);
     font-family: var(--font_family);
     font-weight: bold;
-    font-size: 20px;
+    font-size: var(--content_font_size);
     text-align: center;
     border-radius:5px;
     padding:5px;
@@ -101,7 +103,7 @@ body{
 
 .box .imagebuttonholder #downloadresume:hover
 {
-    background-color:firebrick;
+    background-color: firebrick;
 }
 
 .box #introbox
@@ -111,14 +113,14 @@ body{
 
 .box #introbox #hello
 {
-    font-size:25px;
+    font-size:var(--content_font_size);
     font-weight:bold;
     margin:0%;
 }
 
 .box #introbox #name
 {
-    font-size:40px;
+    font-size:var(--section_main_content_size);
     font-weight:bolder;
     margin:0%;
     margin-top:20px;
@@ -126,7 +128,7 @@ body{
 }
 .box #introbox #content
 {
-    font-size:20px;
+    font-size:var(--content_font_size);
     text-align: justify;
     line-height:27px;
     margin: 0%;
@@ -144,7 +146,7 @@ body{
 {
     padding:var(--sections_padding);
     background-color:var(--lightpink);
-    height:550px;
+    height:510px;
 }
 
 #experience #workinfo
@@ -154,7 +156,7 @@ body{
 }
 #experience #workinfo #company
 {
-    font-size:30px;
+    font-size:var(--section_main_content_size);
     font-weight:bold;
     margin-bottom:0px;
 }
@@ -165,30 +167,35 @@ body{
 }
 #experience #workinfo #reponsibilites 
 {
-    font-size:20px;
+    font-size:var(--content_font_size);
     text-align: justify;
     line-height:27px;
 }
+
 #skills
 {
     padding:var(--sections_padding);
     background-color:var(--white);
-    height:350px;
+    height:340px;
 }
-
+#skills .skillcontainer
+{
+    text-align:center;
+}
 #skills  .skillcontainer .skill-img
 {
-    float:left;
+    display:inline-block;
     width:100px;
     height: 100px;
-    padding-right:80px;
+    padding-left:50px;
+    padding-right:50px;
     padding-bottom:30px;
 }
 #projects
 {
     padding:var(--sections_padding);
     background-color:var(--lightpink);
-    height:800px;
+    height:770px;
 }
 
 #projectimage1
@@ -210,14 +217,14 @@ body{
 }
 .projectname
 {
-    font-size:30px;
+    font-size:var(--section_main_content_size);
     font-weight:bold;
     margin-bottom:0px;
     text-align:center;
 }
 .projectdescription
 {
-    font-size:20px;
+    font-size:var(--content_font_size);
     text-align: justify;
     line-height:22px;
 }
@@ -225,11 +232,11 @@ body{
 {
     padding:var(--sections_padding);
     background-color:var(--white);
-    height:470px;
+    height:520px;
 }
 #acievementdesc
 {
-    font-size:20px;
+    font-size:var(--content_font_size);
     text-align: justify;
     line-height:22px;
 }
@@ -242,7 +249,7 @@ body{
 
 #education .eduinfo .school
 {
-    font-size:30px;
+    font-size:var(--content_font_size);
     font-weight:bold;
     margin-bottom:0px;
 }
@@ -250,6 +257,7 @@ body{
 #education .eduinfo .subtags
 {
     font-size:18px;
+    text-align: justify;
 }
 
 #contactme
@@ -261,107 +269,14 @@ body{
 
 #contactcenter 
 {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    text-align: center;
 }
 #contactcenter .contact-icon
 {
-    float:left;
+    display: inline-block;
     width:30px;
     height: 30px;
-    padding-right:30px;
+    padding-right:15px;
+    padding-left:15px;
     padding-bottom:5px;
-}
-
-.back-to-top {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-}
-
-@media only screen and (max-width:900px) {
-    
-.box 
-{
-    float: none; 
-    width: 100%; 
-}
-
-#aboutme
-{
-    padding:var(--section_padding_mobileversion);
-    height:80%;
-}
-
-.box .imagebuttonholder #userimage
-{
-    width: 70%;
-}
-
-.box #introbox
-{
-    padding:var(--section_padding_mobileversion);
-    padding-top:30px;
-}
-
-#experience
-{
-    height:80%;
-    padding:var(--section_padding_mobileversion);
-}
-
-#experience #workinfo
-{
-    padding:var(--section_padding_mobileversion);
-    padding-top:0px;
-}
-
-#skills
-{
-    height:80%;
-    padding:var(--section_padding_mobileversion);
-    
-}
-#skills .skillcontainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 10px; 
-    justify-content: center; 
-    align-items: center; 
-}
-
-#skills .skillcontainer .skill-img {
-    width: 80px;
-    height: 80px;
-    padding: 5px;
-}
-
-#projects
-{
-    padding:var(--section_padding_mobileversion);
-    height:80%;
-}
-
-.projectcontent
-{
-    padding:var(--section_padding_mobileversion);
-}
-
-#achi_edu
-{
-    padding-left:var(--section_padding_mobileversion);
-    padding-right:var(--section_padding_mobileversion);
-    height:100%;
-}
-
-#education .eduinfo
-{
-    padding-left:var(--section_padding_mobileversion);
-    padding-right:var(--section_padding_mobileversion);
-}
-
 }
